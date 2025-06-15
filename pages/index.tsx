@@ -1,13 +1,13 @@
-import { allArticles } from 'contentlayer/generated'
-import { useState } from 'react'
-import Link from 'next/link'
+import { allArticles } from 'contentlayer/generated';
+import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('');
 
   const filtered = allArticles.filter(article =>
     article.title.toLowerCase().includes(search.toLowerCase())
-  )
+  );
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-6">
@@ -33,5 +33,5 @@ export default function Home() {
         ))}
       </div>
     </div>
-  )
+  );
 }
